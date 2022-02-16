@@ -1,0 +1,31 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+#include<vector>
+#include<map>
+#include<set>
+#include<list>
+#include<queue>
+#include<stack>
+#include<cstring>
+#include<cmath>
+#include<cstdlib>
+#include<unordered_map>
+#include<unordered_set>
+#define Fast ios_base::sync_with_stdio(false); cin.tie(NULL);
+typedef long long ll;
+using namespace std;
+int main(){
+    Fast
+    int t;
+    cin >> t;
+    while(t--){
+        int n,x,y;
+        cin >> n>>x>>y;
+        int res = (n+99)/100*x;
+        res=min(res,(n+3)/4*y);
+        res=min(res,((n/100)*x)+((n%100)+3)/4*y);
+        cout<<res<<endl;
+    }
+    return 0;
+}
