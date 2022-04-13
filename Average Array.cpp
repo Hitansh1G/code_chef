@@ -19,39 +19,43 @@ using namespace std;
 int main(){
     Fast
     int t;
-    cin >> t;
+    cin>>t;
     while(t--){
         int n,x; 
-        cin>>n>>x; 
+        cin >> n >> x; 
         if(n==1){ 
             cout<<x<<endl; 
-            return 0; 
         } 
-        vector<int> a(n); 
-        for(int i=0;i<n;i++){ 
-            a[i]=x; 
-        } 
-        if(n&1){ 
-            for(int i=n/2-1;i>=0;i--){ 
-                a[i]=a[i+1]+1; 
+        else{
+            int arr[n]; 
+            for(int i=0;i<n;i++){ 
+                arr[i]=x; 
             } 
-            for(int i=n/2+1;i<n;i++){ 
-                a[i]=a[i-1]-1; 
+            if(n&1){ 
+                for(int i=n/2-1;i>=0;i--){ 
+                    arr[i]=arr[i+1]+1; 
+                } 
+                for(int i=n/2+1;i<n;i++){ 
+                    arr[i]=arr[i-1]-1; 
+                } 
             } 
-        } 
-        else{ 
-            for(int i=n/2-1;i>=0;i--){ 
-                a[i]=a[i+1]+1; 
+            else{ 
+                arr[n/2]=x-1;
+                arr[(n/2)-1]=x+1;
+                for(int i=(n/2)-2;i>=0;i--){ 
+                        arr[i]=arr[i+1]+1; 
+                } 
+                for(int i=(n/2)+1;i<n;i++){ 
+                        arr[i]=arr[i-1]-1; 
+                } 
             } 
-            a[n/2]=x-1; 
-            for(int i=n/2+1;i<n;i++){ 
-                a[i]=a[i-1]-1; 
+            int i=0;
+            while(i<n){ 
+                cout<<arr[i]<<" ";
+                i++;
             } 
-        } 
-        for(int i=0 ; i<n ; i++){ 
-            cout<<a[i]<<" "; 
-        } 
-        cout<<endl; 
+            cout<<endl; 
         }
+    }
     return 0;
 }
