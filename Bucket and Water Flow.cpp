@@ -23,7 +23,7 @@ int main(){
         int x,y,z,w;
         cin >> w>>x>>y>>z;
         if(((y*z)+w)>x) cout<<"overflow"<<endl;
-        else if(((y*z)+w)=x)cout<<"filled"<<endl;
+        else if(((y*z)+w)==x)cout<<"filled"<<endl;
         else cout<<"unfilled"<<endl;
     }
     return 0;
