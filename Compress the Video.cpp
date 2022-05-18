@@ -24,17 +24,24 @@ int main(){
         cin >> n ;
         int arr[n];
         vector<int>sol;
-        vector<int>::iterator it;
+        // vector<int>::iterator it;
         for(int i=0 ; i<n ; i++){
-            cin >> sol[i];
+            cin >> arr[i];
         }
-        for (auto i = sol.begin(); i != sol.end(); ++i) {
-            if(sol[i]==sol[i+1]){
-                sol.erase[i];
+        // for (auto i = sol.begin(); i != sol.end(); ++i) {
+        //     if(sol[i]==sol[i+1]){
+        //         sol.erase[i];
+        //     }
+        // }
+        int count=0;
+        for(int i=0 ; i<n-1 ; i++){
+            if(arr[i]==arr[i+1]){
+                count++;
+                // i+=1;
             }
         }
-    }
-        cout<<sol.size()<<endl;
+        cout<<n-count<<endl;
+        // cout<<sol.size()<<endl;
     }
     return 0;
-}
+    }
