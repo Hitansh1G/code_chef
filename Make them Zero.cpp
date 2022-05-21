@@ -30,52 +30,34 @@ int main(){
     int t;
     cin >> t;
     while(t--){
-        int n,j=0;
+        int n;
         cin >> n;
-        int arr[n];
-        int flag[32]={};
-        for(int i=0 ; i<n ; i++){
-            int temp;
-            cin >> temp;
-            // int temp = arr[i];
-            while(temp){
-                if(flag[j]==0) {
-                    flag[j]=temp%2;
-                }
-                temp /= 2;
+        int temp[32] = {};
+        for(int i=0 ; i<n ; i++) {
+            int x,j=0;
+            cin >> x;
+            while(x!=0){
+                if(temp[j]==0) temp[j] = x%2;
+                x /= 2;
                 j++;
             }
-            // int j=0;
-            // cin >> arr[i];
-            // cin >> a;
-            
         }
-        // for(int i=0 ; i<n ; i++){
-        //     int j=0;
-        //     // int temp = arr[i];
-        //     // while(temp){
-        //     //     if(flag[j]==0) {
-        //     //         flag[j]=temp%2;
-        //     //     }
-        //     //     temp = temp/ 2;
-        //     //     j++;
-        //     // }
-        // }
         int sol=0;
-        for(int i=0 ; i<n ; i++ ){
-            sol += flag[i];
-            
+        int i=0;
+        while(i<32){
+            sol += temp[i];
+            i++;
         }
         cout<<sol<<endl;
-    //     int flag[32]={};
+
     //     for(int i=0 ; i<n ; i++){
     //         int a = arr[i];
     //         int j=0;
-    //         while(a){
-    //             if(flag[i]==0) flag[j]=a%2;
-    //             a /= 2;
-    //             j++;
-    //         }
+
+    //        if(flag[i]==0) flag[j]=a%2;
+    //          a /= 2;
+    //          j++;
+    //         
     //     }
     //     int sol=0;
     //     for(int i=0 ; i<32 ; i++){
